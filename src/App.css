@@ -1,32 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+}
+
+.colorpicker {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 10px 0; /* Maybe vertical padding will work better */
 }
 
-.App-link {
-  color: #61dafb;
+.colorpicker > .hue-slider {
+  height: 100%;
+  margin: 0 10px; /* Vertical margins break the layout */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider {
+  border: 1px solid #000;
+  display: block;
+  position: relative;
+}
+
+.slider.vertical {
+  height: 100%;
+  width: 15px;
+}
+
+.track {
+  height: 100%;
+  width: 100%;
+}
+
+.pointer {
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  display: block;
+}
+
+.slider .pointer {
+  width: 100%;
+}
+
+.map {
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.map .pointer {
+  width: 3px;
+}
+
+.map .background {
+  height: 100%;
+  background-image: linear-gradient(to top, #000 0%, transparent 100%), linear-gradient(to right, #fff 0%, transparent 100%);
+}
+
+.rgbInputs {
+  display: flex;
+}
+.rgbInputs > * {
+  flex-grow: 1;
+}
+
+.bigInput {
+  font-size: 2rem;
+}
+
+.inputBlock > * {
+  width: 100%;
 }
