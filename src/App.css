@@ -2,8 +2,12 @@
   box-sizing: border-box;
 }
 
+html, body, #root, .App {
+  width: 100%;
+  height: 100%;
+}
+
 .App {
-  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -30,6 +34,10 @@
 .slider.vertical {
   height: 100%;
   width: 15px;
+  background-image: linear-gradient(to top,
+    #f00 0%, #ff0 16.666666%,
+    #0f0 33.333333%, #0ff 50%,
+    #00f 66.666666%, #f0f 83.333333%, #f00 100%);
 }
 
 .track {
