@@ -81,8 +81,9 @@ html, body, #root, .App {
 
 .bigInput {
   font-size: 2rem;
+  width: 100%;
 }
 
-.inputBlock > * {
-  width: 100%;
+label > p {
+  margin: 0 2px;
 }
