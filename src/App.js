@@ -85,10 +85,26 @@ class App extends Component {
   }
 
   handleHexInput = (e) => {
+    const lastGoodValue = this.state.colorHex;
     let hexStr = e.target.value;
     if (hexStr.startsWith("#")) {
       hexStr = hexStr.substring(1);
     }
+
+    if (hexStr.length < 6) {
+      hexStr = lastGoodValue;
+    } else if (hexStr.length > 6) {
+      hexStr = hexStr.substring(hexStr.length - 6, hexStr.length);
+    }
+
+    // Ensure there is always a valid value
+    for (var i = 0; i < hexStr.length; i++) {
+      if (!App.hexChars.includes(hexStr[i])) {
+        hexStr = lastGoodValue;
+        break;
+      }
+    }
+
     const colorHtml = `#${hexStr}`;
     const components = [0,0,0].map((_,i) => {
       return Number.parseInt(hexStr.substring(i * 2, (i + 1) * 2), 16);
@@ -134,5 +150,13 @@ class App extends Component {
     );
   }
 }
+
+App.hexChars = function() {
+  const hexChars = [];
+  for (var i = 0; i < 16; i++) {
+    hexChars.push(i.toString(16));
+  }
+  return hexChars;
+}();
 
 export default App;
