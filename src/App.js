@@ -119,8 +119,12 @@ class App extends Component {
   }
 
   render() {
+    const backStyles = {
+      color: this.state.colorRgb.some((c) => c > 127) ? '#000000' : '#FFFFFF',
+      backgroundColor: this.state.colorHtml
+    };
     return (
-      <div className="App">
+      <div className="App" style={backStyles}>
         <ColorPicker color={this.state.colorHtml} onChange={this.handleColorPick} />
         <div className="rgbInputs">
           <label>
