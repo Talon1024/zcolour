@@ -120,7 +120,6 @@ class App extends Component {
 
   render() {
     const backStyles = {
-      color: this.state.colorRgb.some((c) => c > 127) ? '#000000' : '#FFFFFF',
       backgroundColor: this.state.colorHtml
     };
     return (
@@ -128,25 +127,25 @@ class App extends Component {
         <ColorPicker color={this.state.colorHtml} onChange={this.handleColorPick} />
         <div className="rgbInputs">
           <label>
-            <p>Red</p>
+            <p className="label">Red</p>
             <input type="number" onChange={this.handleComponentInput} value={this.state.colorRgb[0]} className="bigInput" data-component={0}/>
           </label>
           <label>
-            <p>Green</p>
+            <p className="label">Green</p>
             <input type="number" onChange={this.handleComponentInput} value={this.state.colorRgb[1]} className="bigInput" data-component={1}/>
           </label>
           <label>
-            <p>Blue</p>
+            <p className="label">Blue</p>
             <input type="number" onChange={this.handleComponentInput} value={this.state.colorRgb[2]} className="bigInput" data-component={2}/>
           </label>
         </div>
         <div className="rgbInputs">
           <label>
-            <p>Colour as integer</p>
+            <p className="label">Colour as integer</p>
             <input type="number" onChange={this.handleIntInput} value={this.state.colorInt} className="bigInput" />
           </label>
           <label>
-            <p>Colour as hexadecimal value</p>
+            <p className="label">Colour as hexadecimal value</p>
             <input type="text" onChange={this.handleHexInput} value={this.state.colorHex} className="bigInput" />
           </label>
         </div>

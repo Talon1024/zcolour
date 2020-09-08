@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://talon1024.github.io/zcolour",
-  "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
-    "react-simple-colorpicker": "^1.4.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,6 +21,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "react-simple-colorpicker": "^1.4.2"
   }
 }
