@@ -1,0 +1,10 @@
+[package]
+name = "zcolour"
+version = "0.1.0"
+edition = "2024"
+
+# Example of customizing the library in Cargo.toml.
+[lib]
+crate-type = ["lib"]
+
+[dependencies]
